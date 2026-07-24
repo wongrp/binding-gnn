@@ -1,0 +1,54 @@
+# OOD split: 1SQA fold 0, w1 vanilla MPNN baseline.
+# No onsite, no persistent edges, no SH — simplest model.
+# Kopko et al. (2025) OOD evaluation protocol.
+
+lineage:
+  parent: w1_baseline
+  changes: {data: "cleansplit -> ood_1sqa_f0"}
+  description: "OOD 1SQA fold 0, vanilla MPNN (no onsite/edges/SH)"
+
+model:
+  irreps_hidden: "384x0e"
+  num_layers: 5
+  scalars: 192
+  lmax: 0
+  num_atom_types: 10
+  num_scalar_features: 25
+  input_atom_embed_dim: 16
+  r_max: 5.0
+  num_basis: 14
+  use_precomputed_edges: false
+  radial_hidden: 64
+  radial_layers: 2
+  tp_mode: "diagonal"
+  self_cg: "none"
+  use_norm: true
+  node_conditioned_radial: true
+  cross_object_embed_dim: 16
+  aggr: "sum"
+  pool_mode: "sum"
+  head_hidden: 128
+  pool_streams: ["ligand", "pocket"]
+  onsite_mode: "none"
+
+train:
+  epochs: 900
+  cosine_T_max: 1195
+  batch_size: 64
+  learning_rate: 0.0002
+  weight_decay: 0.0001
+  min_lr: 0.00001
+  warmup_epochs: 5
+  patience: 0
+
+data:
+  train_path: "gign_exact_v1/data/v3_with_residues/ood/ood_1sqa_f0_train_5A.pt"
+  val_path: "gign_exact_v1/data/v3_with_residues/ood/ood_1sqa_f0_val_5A.pt"
+  test_path: "gign_exact_v1/data/v3_with_residues/casf2016_5A.pt"
+  test2_path: "gign_exact_v1/data/v3_with_residues/ood/ood_1sqa_test_5A.pt"
+  use_presplit: true
+  use_inter_edges: true
+  use_2copies: true
+
+output:
+  dir: "mpnn_2copies_datamax1_v3/experiments/ood"

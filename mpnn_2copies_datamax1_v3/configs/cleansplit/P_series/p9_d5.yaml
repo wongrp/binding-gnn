@@ -1,0 +1,13 @@
+# P9: d5_shallow_edge rerun with patience=150.
+parent: ../D_series/d5_shallow_edge.yaml
+
+lineage:
+  parent: d5_shallow_edge
+  changes: {patience: "0 -> 150"}
+  description: "Val-gated early stopping rerun"
+
+train:
+  patience: 150
+
+output:
+  dir: "mpnn_2copies_datamax1_v3/experiments/cleansplit/P_series"

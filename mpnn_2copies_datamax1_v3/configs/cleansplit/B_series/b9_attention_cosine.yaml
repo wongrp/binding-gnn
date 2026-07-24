@@ -1,0 +1,46 @@
+# Cleansplit B9: Attention onsite + cosine/wd.
+# Tests: A-series winner (a6 attention, val-sel ~1.40) with improved training recipe.
+# Like A6 but min_lr: 1e-5, weight_decay: 1e-4.
+model:
+  irreps_hidden: "384x0e"
+  num_layers: 5
+  scalars: 192
+  lmax: 0
+  num_atom_types: 10
+  num_scalar_features: 25
+  r_max: 5.0
+  num_basis: 14
+  use_precomputed_edges: false
+  radial_hidden: 64
+  radial_layers: 2
+  tp_mode: "diagonal"
+  self_cg: "none"
+  use_norm: true
+  node_conditioned_radial: true
+  cross_object_embed_dim: 16
+  aggr: "sum"
+  pool_mode: "sum"
+  head_hidden: 128
+  onsite_mode: "attention"
+  onsite_dim: 64
+  pool_streams: ["ligand", "pocket"]
+
+train:
+  epochs: 1200
+  batch_size: 64
+  learning_rate: 0.0002
+  weight_decay: 0.0001
+  min_lr: 0.00001
+  warmup_epochs: 5
+  patience: 0
+
+data:
+  train_path: "gign_exact_v1/data/v3/cleansplit_f0_train_5A.pt"
+  val_path: "gign_exact_v1/data/v3/cleansplit_f0_val_5A.pt"
+  test_path: "gign_exact_v1/data/v3/cleansplit_casf2016_5A.pt"
+  use_presplit: true
+  use_inter_edges: true
+  use_2copies: true
+
+output:
+  dir: "mpnn_2copies_datamax1_v3/experiments/cleansplit/B_series"

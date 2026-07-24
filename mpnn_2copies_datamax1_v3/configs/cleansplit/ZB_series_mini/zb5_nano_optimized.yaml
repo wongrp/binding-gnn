@@ -1,0 +1,62 @@
+# ZB5 optimized: Nano model with tuned training for stable convergence.
+# 1 layer, 128x0e, lower LR, 800 epochs, bigger head.
+
+lineage:
+  parent: zb5_nano
+  changes: {learning_rate: "2e-4 -> 5e-5", epochs: "400 -> 800", head_hidden: "64 -> 128"}
+  description: "Nano optimized: gentler LR, more epochs, bigger head"
+
+model:
+  irreps_hidden: "128x0e"
+  lmax: 0
+  num_layers: 1
+  scalars: 64
+  num_atom_types: 10
+  num_scalar_features: 25
+  r_max: 5.0
+  num_basis: 14
+  use_precomputed_edges: false
+  radial_hidden: 32
+  radial_layers: 2
+  tp_mode: "diagonal"
+  self_cg: "none"
+  use_norm: true
+  node_conditioned_radial: true
+  cross_object_embed_dim: 8
+  aggr: "sum"
+  pool_mode: "sum"
+  head_hidden: 128
+  onsite_mode: "reembed_cg"
+  onsite_dim: 32
+  pool_streams: ["ligand", "pocket"]
+  edge_onsite_mode: "delta,mlp"
+  edge_onsite_dim: 32
+  edge_hidden_dim: 64
+  persistent_edge_state: true
+  edge_state_dim: 32
+  edge_feedback: true
+  global_sh_lmax: 2
+  global_sh_channels: 8
+  residue_global_sh_pooling: true
+  residue_global_sh_lmax: 2
+  residue_global_sh_channels: 8
+
+train:
+  epochs: 800
+  batch_size: 64
+  learning_rate: 0.00005
+  weight_decay: 0.0001
+  min_lr: 0.000005
+  warmup_epochs: 10
+  patience: 0
+
+data:
+  train_path: "gign_exact_v1/data/v3_with_residues/cleansplit_f0_train_5A.pt"
+  val_path: "gign_exact_v1/data/v3_with_residues/cleansplit_f0_val_5A.pt"
+  test_path: "gign_exact_v1/data/v3_with_residues/cleansplit_casf2016_5A.pt"
+  use_presplit: true
+  use_inter_edges: true
+  use_2copies: true
+
+output:
+  dir: "mpnn_2copies_datamax1_v3/experiments/cleansplit/ZB_series_mini"

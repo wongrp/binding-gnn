@@ -1,0 +1,13 @@
+# P12: d31_vedge_tiny rerun with patience=150.
+parent: ../D_series/d31_vedge_tiny.yaml
+
+lineage:
+  parent: d31_vedge_tiny
+  changes: {patience: "0 -> 150"}
+  description: "Val-gated early stopping rerun"
+
+train:
+  patience: 150
+
+output:
+  dir: "mpnn_2copies_datamax1_v3/experiments/cleansplit/P_series"

@@ -1,0 +1,10 @@
+# Pinned to the environment the reported results were produced in.
+# e3nn 0.5.4 is the meaningful pin; the tensor product API changed after it.
+torch==2.5.1
+e3nn==0.5.4
+torch-geometric==2.6.1
+numpy==1.26.4
+scipy==1.13.1
+pyyaml
+matplotlib
+tqdm

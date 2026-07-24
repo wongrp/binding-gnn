@@ -1,0 +1,67 @@
+lineage:
+  parent: zc38_u44_mp1_linear_onsite
+  changes:
+    onsite_mode: "delta -> delta_sym"
+  description: OOD 2p15 fold 3, zc48 (delta_sym at backbone L=1).
+
+model:
+  irreps_hidden: "224x0e + 224x1o"
+  num_layers: 5
+  scalars: 192
+  lmax: 1
+  num_atom_types: 10
+  num_scalar_features: 25
+  input_atom_embed_dim: 16
+  r_max: 5.0
+  num_basis: 14
+  use_precomputed_edges: false
+  radial_hidden: 64
+  radial_layers: 2
+  tp_mode: "diagonal"
+  self_cg: "none"
+  use_norm: true
+  node_conditioned_radial: true
+  cross_object_embed_dim: 16
+  aggr: "sum"
+  pool_mode: "sum"
+  head_hidden: 128
+  onsite_mode: "delta_sym"
+  onsite_dim: 64
+  pool_streams: ["ligand", "pocket"]
+  edge_onsite_mode: "delta,mlp"
+  edge_onsite_dim: 64
+  edge_hidden_dim: 128
+  persistent_edge_state: true
+  edge_state_dim: 64
+  edge_feedback: true
+  global_sh_pooling: true
+  global_sh_lmax: 2
+  global_sh_channels: 16
+  global_sh_out_dim: 64
+  global_sh_separate_proj: true
+  residue_global_sh_pooling: true
+  residue_global_sh_lmax: 2
+  residue_global_sh_channels: 16
+  residue_global_sh_out_dim: 64
+  residue_global_sh_separate_proj: true
+
+train:
+  epochs: 1200
+  batch_size: 64
+  learning_rate: 0.0002
+  weight_decay: 0.0001
+  min_lr: 0.00001
+  warmup_epochs: 5
+  patience: 0
+
+data:
+  train_path: "gign_exact_v1/data/v3_with_residues/ood/ood_2p15_f3_train_5A.pt"
+  val_path: "gign_exact_v1/data/v3_with_residues/ood/ood_2p15_f3_val_5A.pt"
+  test_path: "gign_exact_v1/data/v3_with_residues/casf2016_5A.pt"
+  test2_path: "gign_exact_v1/data/v3_with_residues/ood/ood_2p15_test_5A.pt"
+  use_presplit: true
+  use_inter_edges: true
+  use_2copies: true
+
+output:
+  dir: "mpnn_2copies_datamax1_v3/experiments/ood"

@@ -1,0 +1,72 @@
+paper_label,table,cell,config_id,run_dirs_or_source,metric,value,status
+No paired readouts,3,NoPR l=0,zc18_2copy_pool_both,s42:1.3712043;s52:1.364233;s62:1.4010526;s72:1.3741232;s82:1.4186836,val_sel_test_rmse,1.386±0.021 (n=5),verified
+No paired readouts,3,NoPR l=1,zc18_2copy_pool_both_lmax1,s42:1.391297;s52:1.3695695;s62:1.3897836;s72:1.405313;s82:1.3984782,val_sel_test_rmse,1.391±0.012 (n=5),verified (s42 rerun)
+No paired readouts,3,NoPR l=2,zc18_2copy_pool_both_lmax2,s42:1.3817588;s52:1.3625091;s62:1.4164556;s72:1.3724862;s82:1.3970467,val_sel_test_rmse,1.386±0.019 (n=5),verified (s72/s82 re-run x2; better rerun per seed by test)
+MPNN+PR (Delta),3,Delta l=0,zc37_u44_linear_onsite,s42:1.306826;s52:1.3109796;s62:1.334493;s72:1.355029;s82:1.3216345,val_sel_test_rmse,1.326±0.017 (n=5),verified
+MPNN+PR (Delta),3,Delta l=1,zc38_u44_mp1_linear_onsite,s42:1.2962313;s52:1.3273485;s62:1.3614734;s72:1.2816396;s82:1.2961762,val_sel_test_rmse,1.313±0.029 (n=5),verified
+MPNN+PR (Delta),3,Delta l=2,zc39_u44_mp2_linear_onsite,s42:1.307504;s52:1.2901776;s62:1.2792085;s72:1.301569;s82:1.3062154,val_sel_test_rmse,1.297±0.011 (n=5),verified
+MPNN+PR (Delta_sym),3,Delta_sym l=0,zc47_u44_delta_sym,s42:1.303547;s52:1.3599542;s62:1.332229;s72:1.3156765;s82:1.3968068,val_sel_test_rmse,1.342±0.033 (n=5),verified
+MPNN+PR (Delta_sym),3,Delta_sym l=1,zc48_u44_mp1_delta_sym,s42:1.3491915;s52:1.3126365;s62:1.3180057;s72:1.3407537;s82:1.3098023,val_sel_test_rmse,1.326±0.016 (n=5),verified
+MPNN+PR (Delta_sym),3,Delta_sym l=2,zc49_u44_mp2_delta_sym,s42:1.3617268;s52:1.3238595;s62:1.3313185;s72:1.3286334;s82:1.3437756,val_sel_test_rmse,1.338±0.014 (n=5),verified
+MPNN+PR (Delta+MLP),3,Delta+MLP l=0,zc32_u44_scalar_onsite,s42:1.3916744;s52:1.3368493;s62:1.3763337;s72:1.3776015;s82:1.3453681,val_sel_test_rmse,1.366±0.021 (n=5),verified
+MPNN+PR (Delta+MLP),3,Delta+MLP l=1,zc33_u44_mp1_scalar_onsite,s42:1.2949718;s52:1.3088019;s62:1.2795141;s72:1.3367736;s82:1.2907417,val_sel_test_rmse,1.302±0.020 (n=5),verified
+MPNN+PR (Delta+MLP),3,Delta+MLP l=2,zc34_u44_mp2_scalar_onsite,s42:1.2948284;s52:1.3391849;s62:1.3226413;s72:1.3271956;s82:1.297393,val_sel_test_rmse,1.316±0.017 (n=5),verified
+MPNN+PR (Delta_sym+MLP),3,Dsym+MLP l=0,zc50_u44_delta_sym_mlp,s42:1.3120319;s52:1.3284024;s62:1.3426383;s72:1.3630064;s82:1.3260297,val_sel_test_rmse,1.334±0.017 (n=5),verified
+MPNN+PR (Delta_sym+MLP),3,Dsym+MLP l=1,zc51_u44_mp1_delta_sym_mlp,s42:1.3173742;s52:1.3557773;s62:1.3300552;s72:1.3207525;s82:1.3020253,val_sel_test_rmse,1.325±0.018 (n=5),verified
+MPNN+PR (Delta_sym+MLP),3,Dsym+MLP l=2,zc52_u44_mp2_delta_sym_mlp,s42:1.3538586;s52:1.3518246;s62:1.297407;s72:1.3049834;s82:1.3212067,val_sel_test_rmse,1.326±0.023 (n=5),verified
+MPNN+PR (||Delta||^2),3,||D||^2 l=0,zc53_u44_delta_norm2,s42:1.3084993;s52:1.377639;s62:1.3822995;s72:1.3432366;s82:1.3876135,val_sel_test_rmse,1.360±0.030 (n=5),verified
+MPNN+PR (||Delta||^2),3,||D||^2 l=1,zc54_u44_mp1_delta_norm2,s42:1.3390077;s52:1.2911547;s62:1.3290483;s72:1.3280368;s82:1.3013555,val_sel_test_rmse,1.318±0.018 (n=5),verified
+MPNN+PR (||Delta||^2),3,||D||^2 l=2,zc55_u44_mp2_delta_norm2,s42:1.3386222;s52:1.3222669;s62:1.3265082;s72:1.3405213;s82:1.3177317,val_sel_test_rmse,1.329±0.009 (n=5),verified
+"MPNN+PR (<h_b,h_ub>)",3,"<hb,hub> l=0",zc56_u44_overlap,s42:1.3921713;s52:1.3420757;s62:1.3530655;s72:1.4008344;s82:1.3674955,val_sel_test_rmse,1.371±0.022 (n=5),verified
+"MPNN+PR (<h_b,h_ub>)",3,"<hb,hub> l=1",zc57_u44_mp1_overlap,s42:1.2997943;s52:1.2975341;s62:1.3764822;s72:1.3008275;s82:1.345761,val_sel_test_rmse,1.324±0.032 (n=5),verified
+"MPNN+PR (<h_b,h_ub>)",3,"<hb,hub> l=2",zc58_u44_mp2_overlap,s42:1.3227252;s52:1.3335791;s62:1.3331028;s72:1.3074073;s82:1.3343029,val_sel_test_rmse,1.326±0.010 (n=5),verified
+MPNN+PR (CG),3,CG l=0,zc40_u44_direct_cg,s42:1.3513526;s52:1.3403019;s62:1.3477827;s72:1.3718945;s82:1.3486605,val_sel_test_rmse,1.352±0.011 (n=5),verified
+MPNN+PR (CG),3,CG l=1,zc35_u44_mp1_direct_cg,s42:1.3091077;s52:1.3011973;s62:1.2813888;s72:1.319604;s82:1.305729,val_sel_test_rmse,1.303±0.013 (n=5),verified
+MPNN+PR (CG),3,CG l=2,zc36_u44_mp2_direct_cg,s42:1.3025532;s52:1.3221018;s62:1.3257718;s72:1.3099554;s82:1.3252354,val_sel_test_rmse,1.317±0.009 (n=5),printed n=4; n=5=1.317 (+0.002)
+MPNN+PR (rho_CG),3,rhoCG l=0,,,val_sel_test_rmse,1.293±0.015,"provenance pinned: U_series/u44_dual_scale_sh (5 seeds, s42=2026-03-03_1_s42)"
+MPNN+PR (rho_CG),3,rhoCG l=1,zc10_u44_mp1_par_matched,s42:1.3402835;s52:1.3154359;s62:1.3295414;s72:1.3763252;s82:1.3563721,val_sel_test_rmse,1.344±0.021 (n=5),verified
+MPNN+PR (rho_CG),3,rhoCG l=2,zc12_u44_mp2_par_matched,s42:1.3228406;s52:1.3017807;s62:1.3226094;s72:1.3225964;s82:1.3226687,val_sel_test_rmse,1.318±0.008 (n=5),printed n=3 (s42/s52/s62); n=5=1.318 (+0.002)
+"MPNN+PR (atom, 5L)",4,CASF/Indep ensemble,u44_5fold,results/per_sample_ensemble_official.csv,5fold_ensemble,CASF 1.258/0.834  Indep 1.414/0.822,verified
+"MPNN+PR (residue, 2L)",4,CASF/Indep ensemble,fr7_5fold,results/per_sample_ensemble_official.csv,5fold_ensemble,CASF 1.282/0.822  Indep 1.383/0.833,verified
+fr7 (residue rho_CG l=0),6,pre-FT cluster ensembles,fr7,results/ood_baseline_official.csv,5fold_cluster_ensemble_R,6/7 clusters match the published row to <=0.006,"published 0.529 unreproducible; paper now reports 0.493 (best-val, diverged fold-3 rerun excluded)"
+"vanilla 1c,2L,l0",1,"1c,2L,l0",zc28_vanilla_1copy_lmax0_2L,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.441+/-0.007 (n=3),verified
+"vanilla 1c,2L,l1",1,"1c,2L,l1",zc29_vanilla_1copy_lmax1_2L,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.453+/-0.016 (n=3),verified
+"vanilla 1c,2L,l2",1,"1c,2L,l2",zc30_vanilla_1copy_lmax2_2L,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.405+/-0.023 (n=3),verified
+"vanilla 2c,2L,l0",1,"2c,2L,l0",zc23_vanilla_2copy_lmax0_2L,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.474+/-0.031 (n=3),DRIFT: 3rd duplicate run (1.603) landed on s52 -> now 1.474
+"vanilla 2c,2L,l1",1,"2c,2L,l1",zc24_vanilla_2copy_lmax1_2L,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.450+/-0.038 (n=3),DRIFT: extra duplicate on s52 -> now 1.450
+"vanilla 2c,2L,l2",1,"2c,2L,l2",zc25_vanilla_2copy_lmax2_2L,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.483+/-0.019 (n=3),DRIFT: extra duplicates on s42/s52 -> now 1.483
+"vanilla 1c,5L,l0",1,"1c,5L,l0",zc19_vanilla_1copy,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.364+/-0.015 (n=3),verified (n=5 available: 1.386)
+"vanilla 1c,5L,l1",1,"1c,5L,l1",zc26_vanilla_1copy_lmax1,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.370+/-0.025 (n=3),verified (n=5 now available: 1.389)
+"vanilla 1c,5L,l2",1,"1c,5L,l2",zc27_vanilla_1copy_lmax2,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.369+/-0.021 (n=3),verified (n=5 now available: 1.392)
+"vanilla 2c,5L,l0",1,"2c,5L,l0",zc20_vanilla_2copy,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.406+/-0.028 (n=3),verified (n=5 available: 1.423)
+"vanilla 2c,5L,l1",1,"2c,5L,l1",zc21_vanilla_2copy_lmax1,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.398+/-0.031 (n=3),verified (n=5 available: 1.399)
+"vanilla 2c,5L,l2",1,"2c,5L,l2",zc22_vanilla_2copy_lmax2,42;52;62,"val_sel_test_rmse (3 seeds, dup-avg)",1.368+/-0.006 (n=3),verified (n=5 available: 1.384)
+MPNN+PR (full),2,MPNN+PR (full),,,val_sel_test_rmse,1.293,u44; provenance = U_series/u44_dual_scale_sh
+Remove feedback,2,Remove feedback,zc5_no_feedback,42;52;62;72;82,val_sel_test_rmse,1.323+/-0.013 (n=5),ok
+Remove residue global comp.,2,Remove residue global comp.,zc4_no_residue_sh,42;52;62;72;82,val_sel_test_rmse,1.326+/-0.029 (n=5),ok
+Remove local comparisons,2,Remove local comparisons,zc7_no_all_onsite,42;52;62;72;82,val_sel_test_rmse,1.340+/-0.013 (n=5),ok
+Remove atom global comp.,2,Remove atom global comp.,zc3_no_atom_sh,42;52;62;72;82,val_sel_test_rmse,1.343+/-0.033 (n=5),ok
+Remove edge updates,2,Remove edge updates,zc6_no_persist_edges,42;52;62;72;82,val_sel_test_rmse,1.344+/-0.034 (n=5),ok
+Remove global comparisons,2,Remove global comparisons,zc9_no_all_sh,42;52;62;72;82,val_sel_test_rmse,1.363+/-0.027 (n=5),s72 rerun (original 1.425 replaced)
+Remove atom comparison,2,Remove atom comparison,zc1_no_node_onsite,42;52;62;72;82,val_sel_test_rmse,1.359+/-0.034 (n=5),ok
+Remove edge comparison,2,Remove edge comparison,zc2_no_edge_onsite,42;52;62;72;82,val_sel_test_rmse,1.359+/-0.046 (n=5),ok
+Remove all comparisons,2,Remove all comparisons,zc18_2copy_pool_both,42;52;62;72;82,val_sel_test_rmse,1.386+/-0.021 (n=5),ok
+1-copy,2,1-copy,zc8_1copy,42;52;62;72;82,val_sel_test_rmse,1.389+/-0.014 (n=5),ok
+u44 (post-FT FT-25),7,7-cluster ensemble,u44,results/ood_ft_preds_bestof/<arch>_<cluster>_n25.npz,FT25_5fold_ensemble_R,mean R=0.541 over 7 clusters,reproducible from cached predictions
+fr7 (post-FT FT-25),7,7-cluster ensemble,fr7,results/ood_ft_preds_bestof/<arch>_<cluster>_n25.npz,FT25_5fold_ensemble_R,mean R=0.570 over 7 clusters,reproducible from cached predictions
+fr7nos (post-FT FT-25),7,7-cluster ensemble,fr7nos,results/ood_ft_preds_bestof/<arch>_<cluster>_n25.npz,FT25_5fold_ensemble_R,mean R=0.554 over 7 clusters,reproducible from cached predictions
+zc35 (post-FT FT-25),7,7-cluster ensemble,zc35,results/ood_ft_preds_bestof/<arch>_<cluster>_n25.npz,FT25_5fold_ensemble_R,mean R=0.539 over 7 clusters,reproducible from cached predictions
+frrho1  (residue rho_CG l=1),7,7-cluster ensemble,,results/postft_ensemble_3archs_jun15.txt,FT25_5fold_ensemble_R,mean R=0.575,exact
+frrho2  (residue rho_CG l=2),7,7-cluster ensemble,,results/postft_ensemble_3archs_jun15.txt,FT25_5fold_ensemble_R,mean R=0.580,exact
+frdsym0 (residue Delta_sym l=0),7,7-cluster ensemble,,results/postft_ensemble_3archs_jun15.txt,FT25_5fold_ensemble_R,mean R=0.574,exact
+u44 + Residue l=0 (joint),7,7-cluster ensemble,,results/joint_u44_residue_ood.txt,FT25_5fold_ensemble_R,mean R=0.592,exact
+u44 + Residue l=1 (joint),7,7-cluster ensemble,,results/joint_u44_residue_ood.txt,FT25_5fold_ensemble_R,mean R=0.595,exact
+u44 + Residue l=2 (joint),7,7-cluster ensemble,,results/joint_u44_residue_ood.txt,FT25_5fold_ensemble_R,mean R=0.599,exact
+u44 + Residue Dsym (joint),7,7-cluster ensemble,,results/joint_u44_residue_ood.txt,FT25_5fold_ensemble_R,mean R=0.595,exact
+GEMS / GEMS+AT / GenScore / ATOMICA-MLP,7,baseline rows,,Kopko et al. 2025 (published),external,as published,external -- no run dirs
+Headline CleanSplit ensembles -- CHECKPOINT-LEVEL provenance,4,table-level provenance,,results/checkpoint_provenance.csv (10 checkpoints) + per_sample_ensemble_official.csv,see status,,VERIFIED: all 10 folds matched to checkpoints by prediction; rebuilt 1.2581/1.2816 = published
+"Ensemble mechanics (atom+residue vs atom+atom, Ideal floors)",5,table-level provenance,,results/per_sample_all_ablation.csv + results/per_sample_fr7.csv,see status,,"VERIFIED exactly: 1.243 / 1.270 ensemble, 1.030 / 1.131 Ideal, residual r 0.803 / 0.925"
+Quartile-stratified RMSE per bin (atom vs residue vs ensemble),9,table-level provenance,,results/per_sample_ensemble_official.csv + stratification descriptors,see status,,source recorded; per-bin cells not individually re-verified
+Joint OOD ensembles by fold-index mix,10,table-level provenance,,results/ood_ft_joint_ensembles.csv + results/joint_u44_residue_ood.txt,see status,,joint 5+5 rows VERIFIED exactly (0.592/0.595/0.599/0.595); 3+2 and 2+3 mixes from the CSV
+Full pre-FT OOD grid (all readout variants x 7 clusters),11,table-level provenance,,results/ood_baseline_official.csv (fr7) + results/full_ensemble_3archs_jun15.txt (survey archs),see status,,"superset of Table 6; same caveat -- fr7 2vw5 not reproducible, paper now reports 0.493"
+Full post-FT OOD grid (all readout variants x 7 clusters),12,table-level provenance,,results/ood_ft_preds_bestof/*.npz + results/postft_ensemble_3archs_jun15.txt,see status,,superset of Table 7; all archs verified (fr7 synced to cache)

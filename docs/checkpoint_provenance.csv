@@ -1,0 +1,11 @@
+model,fold,run_dir,checkpoint,seed,fold_test_rmse,match_max_abs_err,published_ensemble_rmse,paper_table
+atom_u44,0,mpnn_2copies_datamax1_v3/experiments/cleansplit/U_series_angular_resolution/u44_dual_scale_sh/2026-03-15_1_s52,best_model_val.pt,52,1.2714,6.03e-06,1.2581,Table 4
+atom_u44,1,mpnn_2copies_datamax1_v3/experiments/cleansplit/U44_5fold_cv/u44_f1/2026-03-16_2_s52,best_model_val.pt,52,1.3221,5.1e-05,1.2581,Table 4
+atom_u44,2,mpnn_2copies_datamax1_v3/experiments/cleansplit/U44_5fold_cv/u44_f2/2026-03-16_5_s52,best_model_val.pt,52,1.3346,5.0e-05,1.2581,Table 4
+atom_u44,3,mpnn_2copies_datamax1_v3/experiments/cleansplit/U44_5fold_cv/u44_f3/2026-03-16_4_s52,best_model_val.pt,52,1.3074,5.3e-05,1.2581,Table 4
+atom_u44,4,mpnn_2copies_datamax1_v3/experiments/cleansplit/U44_5fold_cv/u44_f4/2026-03-16_2_s52,best_model_val.pt,52,1.3721,5.1e-05,1.2581,Table 4
+residue_fr7,0,mpnn_2copies_datamax1_v3/experiments/cleansplit/fr7_zb160_5fold_cv_1200ep/fr7_f0/2026-04-16_1_s42,best_model_val.pt,42,1.3242,5.1e-05,1.2816,Table 4
+residue_fr7,1,mpnn_2copies_datamax1_v3/experiments/cleansplit/fr7_zb160_5fold_cv_1200ep/fr7_f1/2026-04-16_1_s42,best_model_val.pt,42,1.3692,5.2e-05,1.2816,Table 4
+residue_fr7,2,mpnn_2copies_datamax1_v3/experiments/cleansplit/fr7_zb160_5fold_cv_1200ep/fr7_f2/2026-04-16_1_s42,best_model_val.pt,42,1.3271,5.1e-05,1.2816,Table 4
+residue_fr7,3,mpnn_2copies_datamax1_v3/experiments/cleansplit/fr7_zb160_5fold_cv_1200ep/fr7_f3/2026-04-16_1_s42,best_model_val.pt,42,1.3320,5.1e-05,1.2816,Table 4
+residue_fr7,4,mpnn_2copies_datamax1_v3/experiments/cleansplit/fr7_zb160_5fold_cv_1200ep/fr7_f4/2026-04-16_1_s42,best_model_val.pt,42,1.3564,5.0e-05,1.2816,Table 4

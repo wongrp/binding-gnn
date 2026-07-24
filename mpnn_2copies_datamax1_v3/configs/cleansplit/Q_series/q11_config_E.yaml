@@ -1,0 +1,53 @@
+# Q11: Config E — scalar hidden (384x0e) with lmax=1 SH in TP.
+# Paper claims Config E degenerates to Config A: when hidden states are scalars,
+# only Y_0 contributes to the TP (0⊗Y_l→l exists but output mask is l=0 only).
+# Higher-l SH are computed but unused. This run empirically verifies the claim.
+# Expected: loss curve identical to b2 (lmax=0 scalar no-onsite) within noise.
+
+lineage:
+  parent: b2_no_onsite
+  changes: {lmax: "0 -> 1"}
+  description: "Config E verification — scalar hidden + lmax=1 SH. Should match b2 exactly."
+
+model:
+  irreps_hidden: "384x0e"
+  num_layers: 5
+  scalars: 192
+  lmax: 1
+  num_atom_types: 10
+  num_scalar_features: 25
+  r_max: 5.0
+  num_basis: 14
+  use_precomputed_edges: false
+  radial_hidden: 64
+  radial_layers: 2
+  tp_mode: "diagonal"
+  self_cg: "none"
+  use_norm: true
+  node_conditioned_radial: true
+  cross_object_embed_dim: 16
+  aggr: "sum"
+  pool_mode: "sum"
+  head_hidden: 128
+  onsite_mode: "none"
+  pool_streams: ["ligand", "pocket"]
+
+train:
+  epochs: 1200
+  batch_size: 64
+  learning_rate: 0.0002
+  weight_decay: 0.0001
+  min_lr: 0.00001
+  warmup_epochs: 5
+  patience: 0
+
+data:
+  train_path: "gign_exact_v1/data/v3/cleansplit_f0_train_5A.pt"
+  val_path: "gign_exact_v1/data/v3/cleansplit_f0_val_5A.pt"
+  test_path: "gign_exact_v1/data/v3/cleansplit_casf2016_5A.pt"
+  use_presplit: true
+  use_inter_edges: true
+  use_2copies: true
+
+output:
+  dir: "mpnn_2copies_datamax1_v3/experiments/cleansplit/Q_series"

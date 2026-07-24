@@ -1,0 +1,13 @@
+# P3: e8_d2_virtual_k8_d32 rerun with patience=150.
+parent: ../E_series/e8_d2_virtual_k8_d32.yaml
+
+lineage:
+  parent: e8_d2_virtual_k8_d32
+  changes: {patience: "0 -> 150"}
+  description: "Val-gated early stopping rerun"
+
+train:
+  patience: 150
+
+output:
+  dir: "mpnn_2copies_datamax1_v3/experiments/cleansplit/P_series"

@@ -1,0 +1,70 @@
+# U33: d2 + global SH augment_self_cg with out_dim=128.
+# Tests whether the inner 832→64 projection is an information bottleneck.
+# Doubling to 128 lets the power spectrum preserve more variance before
+# reaching the prediction head (which also sees 128 more dims: 768 total).
+#
+# Baseline: u29 (same but out_dim=64)
+
+lineage:
+  parent: u29_d2_global_sh_augment_self_cg
+  changes: {global_sh_out_dim: "64 -> 128"}
+  description: "augment_self_cg out_dim=128 -- is inner projection a bottleneck?"
+
+model:
+  irreps_hidden: "384x0e"
+  num_layers: 5
+  scalars: 192
+  lmax: 0
+  num_atom_types: 10
+  num_scalar_features: 25
+  input_atom_embed_dim: 16
+  r_max: 5.0
+  num_basis: 14
+  use_precomputed_edges: false
+  radial_hidden: 64
+  radial_layers: 2
+  tp_mode: "diagonal"
+  self_cg: "none"
+  use_norm: true
+  node_conditioned_radial: true
+  cross_object_embed_dim: 16
+  aggr: "sum"
+  pool_mode: "sum"
+  head_hidden: 128
+  onsite_mode: "reembed_cg"
+  onsite_dim: 64
+  onsite_reembed_lmax: 1
+  onsite_cg_mode: "uuu"
+  pool_streams: ["ligand", "pocket"]
+  edge_onsite_mode: "delta,mlp"
+  edge_onsite_dim: 64
+  edge_hidden_dim: 128
+  persistent_edge_state: true
+  edge_state_dim: 64
+  edge_feedback: true
+  global_sh_pooling: true
+  global_sh_lmax: 2
+  global_sh_channels: 16
+  global_sh_out_dim: 128
+  global_sh_separate_proj: true
+  global_sh_head: "augment_self_cg"
+
+train:
+  epochs: 1200
+  batch_size: 64
+  learning_rate: 0.0002
+  weight_decay: 0.0001
+  min_lr: 0.00001
+  warmup_epochs: 5
+  patience: 0
+
+data:
+  train_path: "gign_exact_v1/data/v3/cleansplit_f0_train_5A.pt"
+  val_path: "gign_exact_v1/data/v3/cleansplit_f0_val_5A.pt"
+  test_path: "gign_exact_v1/data/v3/cleansplit_casf2016_5A.pt"
+  use_presplit: true
+  use_inter_edges: true
+  use_2copies: true
+
+output:
+  dir: "mpnn_2copies_datamax1_v3/experiments/cleansplit/U_series_angular_resolution"
