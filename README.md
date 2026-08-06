@@ -37,7 +37,7 @@ RMSE is on CASF-2016 (285 complexes).
 | atom | one node per pocket atom | 5 layers, 192 channels | 1.258 |
 | residue | one node per pocket residue | 2 layers, 160 channels | 1.282 |
 
-Averaging all ten gives 1.233.
+The ten-model average scores 1.233 RMSE.
 
 ## Running
 
@@ -57,7 +57,7 @@ checkpoints load against, so a checkpoint stays loadable after the code moves.
 files and prints any that disagree. It reads the data from the deposit, so fetch
 that first and point the script at it.
 
-`docs/manifest.csv` is the record behind it: one row per reported number, naming
+`docs/manifest.csv` is the record behind that check: one row per reported number, naming
 the source file, the metric, the value, and whether it recomputes.
 
 ## Data
@@ -75,6 +75,8 @@ the 50% threshold.
 python 3.10   torch 2.5.1+cu124   e3nn 0.5.4
 torch_geometric 2.6.1   numpy 1.26.4   scipy 1.13.1
 ```
+
+Install the pinned dependencies with `pip install -r requirements.txt`.
 
 `e3nn` 0.5.4 matters — the tensor product API shifted in later releases. Results
 were checked to reproduce under 0.5.5 within run-to-run variation.
